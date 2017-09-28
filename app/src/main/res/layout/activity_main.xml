@@ -96,7 +96,7 @@
             <View style="@style/lineHorizontal" />
 
             <TextView
-                android:id="@+id/divide"
+                android:id="@+id/percentage"
                 style="@style/normalButton"
                 android:text="%" />
         </LinearLayout>
@@ -153,11 +153,13 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <ImageView
+            <TextView
+                android:id="@+id/divide"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:gravity="center_horizontal|center_vertical"
+                android:text="/"
                 android:textSize="30sp" />
 
             <View style="@style/lineHorizontal" />
