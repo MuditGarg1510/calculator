@@ -9,151 +9,191 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2">
+        android:layout_weight="2"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"></LinearLayout>
 
     </LinearLayout>
-    <View
-        style="@style/lineHorizontal"/>
+
+    <View style="@style/lineHorizontal" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
         android:orientation="horizontal">
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
-            <TextView
-                style="@style/normalButton"
-                android:textColor="#ff8c00"
-                android:text="AC"/>
-            <View
-                style="@style/lineHorizontal"/>
-            <TextView
-                style="@style/normalButton"
-                android:text="7"/>
-            <View
-                style="@style/lineHorizontal"/>
-            <TextView
-                style="@style/normalButton"
-                android:text="4" />
-            <View
-                style="@style/lineHorizontal"/>
-            <TextView
-                android:text="1"
-                style="@style/normalButton"/>
-            <View
-                style="@style/lineHorizontal"/>
-            <TextView
-                style="@style/normalButton"
-                android:text="%"/>
-        </LinearLayout>
-        <View
-            style="@style/lineVertical"/>
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
-            <ImageView
-                style="@style/normalButton"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_width="36dp"
-                android:src="@mipmap/ic_backspace_black_24dp"/>
-            <View
-                style="@style/lineHorizontal"/>
-            <TextView
-                android:text="8"
-                style="@style/normalButton"/>
-            <View
-                style="@style/lineHorizontal"/>
-            <TextView
-                android:text="5"
-                style="@style/normalButton"/>
-            <View
-                style="@style/lineHorizontal"/>
-            <TextView
-                android:text="2"
-                style="@style/normalButton"/>
-            <View
-                style="@style/lineHorizontal"/>
-            <TextView
-                android:text="0"
-                style="@style/normalButton"/>
-        </LinearLayout>
-        <View
-            style="@style/lineVertical"/>
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:textSize="30sp"
-                android:gravity="center_horizontal|center_vertical"/>
-            <View
-                style="@style/lineHorizontal"/>
-            <TextView
-                android:text="9"
-                style="@style/normalButton"/>
-            <View
-                style="@style/lineHorizontal"/>
-            <TextView
-                android:text="6"
-                style="@style/normalButton"/>
-            <View
-                style="@style/lineHorizontal"/>
-            <TextView
-                android:text="3"
-                style="@style/normalButton"/>
-            <View
-                style="@style/lineHorizontal"/>
-            <TextView
-                android:text="."
-                style="@style/normalButton"/>
-        </LinearLayout>
-        <View
-            style="@style/lineVertical"/>
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical">
+
+            <TextView
+                style="@style/normalButton"
+                android:text="AC"
+                android:textColor="#ff8c00" />
+
+            <View style="@style/lineHorizontal" />
+
+            <TextView
+                style="@style/normalButton"
+                android:text="7" />
+
+            <View style="@style/lineHorizontal" />
+
+            <TextView
+                style="@style/normalButton"
+                android:text="4" />
+
+            <View style="@style/lineHorizontal" />
+
+            <TextView
+                style="@style/normalButton"
+                android:text="1" />
+
+            <View style="@style/lineHorizontal" />
+
+            <TextView
+                style="@style/normalButton"
+                android:text="%" />
+        </LinearLayout>
+
+        <View style="@style/lineVertical" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/normalButton"
+                android:layout_width="36dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:src="@mipmap/ic_backspace_black_24dp" />
+
+            <View style="@style/lineHorizontal" />
+
+            <TextView
+                style="@style/normalButton"
+                android:text="8" />
+
+            <View style="@style/lineHorizontal" />
+
+            <TextView
+                style="@style/normalButton"
+                android:text="5" />
+
+            <View style="@style/lineHorizontal" />
+
+            <TextView
+                style="@style/normalButton"
+                android:text="2" />
+
+            <View style="@style/lineHorizontal" />
+
+            <TextView
+                style="@style/normalButton"
+                android:text="0" />
+        </LinearLayout>
+
+        <View style="@style/lineVertical" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="AC"
-                android:gravity="center_horizontal|center_vertical"/>
-            <View
-                style="@style/lineHorizontal"/>
+                android:gravity="center_horizontal|center_vertical"
+                android:textSize="30sp" />
+
+            <View style="@style/lineHorizontal" />
+
             <TextView
-                android:text="-"
-                style="@style/normalButton"/>
-            <View
-                style="@style/lineHorizontal"/>
+                style="@style/normalButton"
+                android:text="9" />
+
+            <View style="@style/lineHorizontal" />
+
             <TextView
-                android:text="+"
-                style="@style/normalButton"/>
-            <View
-                style="@style/lineHorizontal"/>
+                style="@style/normalButton"
+                android:text="6" />
+
+            <View style="@style/lineHorizontal" />
+
+            <TextView
+                style="@style/normalButton"
+                android:text="3" />
+
+            <View style="@style/lineHorizontal" />
+
+            <TextView
+                style="@style/normalButton"
+                android:text="." />
+        </LinearLayout>
+
+        <View style="@style/lineVertical" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="AC" />
+
+            <View style="@style/lineHorizontal" />
+
+            <TextView
+                style="@style/normalButton"
+                android:text="-" />
+
+            <View style="@style/lineHorizontal" />
+
+            <TextView
+                style="@style/normalButton"
+                android:text="+" />
+
+            <View style="@style/lineHorizontal" />
+
             <view
                 android:layout_width="match_parent"
-                android:layout_height="1dp"/>
+                android:layout_height="1dp" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="2"
+                android:background="#FF8c00"
+                android:gravity="center_horizontal|center_vertical"
                 android:text="="
                 android:textColor="#ffffff"
-                android:textSize="30sp"
-                android:background="#FF8c00"
-                android:gravity="center_horizontal|center_vertical"/>
+                android:textSize="30sp" />
         </LinearLayout>
 
     </LinearLayout>
