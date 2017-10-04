@@ -3,7 +3,6 @@ package com.example.android.calculator;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import butterknife.BindView;
@@ -13,8 +12,6 @@ import butterknife.OnClick;
 public class MainActivity extends AppCompatActivity {
     double number1;
     double number2;
-    @BindView(R.id.dot)
-    TextView dot;
     boolean input1entered = false;
     char operation;
     @BindView(R.id.input3)
@@ -24,22 +21,19 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.input1)
     TextView input1;
     TextView[] number = new TextView[10];
-    ImageView backspace;
-    TextView reset;
-    TextView divide;
-    ImageView multiply;
-    TextView minus;
-    TextView plus;
-    TextView equalTo;
     boolean isOperationEntered;
+    @BindView(R.id.sign1)
     TextView sign1;
+    @BindView(R.id.sign2)
     TextView sign2;
+
     @OnClick(R.id.AC)
-    public void reset(){
+    public void reset() {
         input1.setText("");
         input2.setText("");
         input3.setText("");
     }
+
     @OnClick(R.id.backspace)
     public void backspace() {
         if (input1entered) {
@@ -71,13 +65,37 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @OnClick(R.id.plus)
+    public void plus() {
+        operation = '+';
+    }
+
+    @OnClick(R.id.minus)
+    public void minus() {
+        operation = '-';
+    }
+
+    @OnClick(R.id.multiply)
+    public void multiply() {
+        operation = '*';
+    }
+
+    @OnClick(R.id.divide)
+    public void divide() {
+        operation = '/';
+    }
+
+    @OnClick(R.id.equal)
+    public void equal() {
+        if (input1entered)
+            setAnswer();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        sign1 = (TextView) findViewById(R.id.sign1);
-        sign2 = (TextView) findViewById(R.id.sign2);
         number[0] = (TextView) findViewById(R.id.number0);
         number[1] = (TextView) findViewById(R.id.number1);
         number[2] = (TextView) findViewById(R.id.number2);
@@ -88,9 +106,6 @@ public class MainActivity extends AppCompatActivity {
         number[7] = (TextView) findViewById(R.id.number7);
         number[8] = (TextView) findViewById(R.id.number8);
         number[9] = (TextView) findViewById(R.id.number9);
-        input3 = (TextView) findViewById(R.id.input3);
-        input2 = (TextView) findViewById(R.id.input2);
-        input1 = (TextView) findViewById(R.id.input1);
         for (int i = 0; i < 10; i++) {
             final int I = i;
             number[i].setOnClickListener(new View.OnClickListener() {
@@ -105,40 +120,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
-        plus = (TextView) findViewById(R.id.plus);
-        minus = (TextView) findViewById(R.id.minus);
-        multiply = (ImageView) findViewById(R.id.multiply);
-        equalTo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (input1entered)
-                    setAnswer();
-            }
-        });
-        divide.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                operation = '/';
-            }
-        });
-        multiply.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                operation = '*';
-            }
-        });
-        plus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                operation = '+';
-            }
-        });
-        minus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                operation = '-';
-            }
-        });
     }
 
     private void setAnswer() {
