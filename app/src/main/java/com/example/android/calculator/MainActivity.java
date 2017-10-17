@@ -31,9 +31,11 @@ public class MainActivity extends AppCompatActivity {
     public void reset() {
         input1.setText("");
         input2.setText("");
-        input3.setText("");
+        input3.setText("0");
         input1entered = false;
         isOperationEntered = false;
+        sign2.setText("");
+        sign1.setText("");
     }
 
     @OnClick(R.id.backspace)
@@ -44,9 +46,12 @@ public class MainActivity extends AppCompatActivity {
             else if (input2.getText().toString().length() > 1)
                 input2.setText(input2.getText().toString().substring(0, input2.getText().toString().length() - 1));
         } else if (isOperationEntered) {
-            if (input3.getText().toString().length() == 1)
-                input3.setText("");
-            else if (input3.getText().toString().length() > 1)
+            isOperationEntered = false;
+            sign2.setText("");
+        } else {
+            if (input3.getText().length() == 1)
+                input3.setText("0");
+            else
                 input3.setText(input3.getText().toString().substring(0, input3.getText().toString().length() - 1));
         }
     }
@@ -56,15 +61,40 @@ public class MainActivity extends AppCompatActivity {
         if (input1entered) {
             if (input2.getText().toString().length() == 0)
                 input2.setText("0.");
-            else
-                input2.setText(input2.getText() + ".");
+            else {
+                double num = getValue(input2);
+                if (num == (int) num)
+                    input2.setText(input2.getText() + ".");
+            }
             setAnswer();
         } else {
             if (input3.getText().toString().length() == 0)
                 input3.setText("0.");
-            else
-                input3.setText(input3.getText() + ".");
+            else {
+                double num = getValue(input3);
+                if (num == (int) num)
+                    input3.setText(input3.getText() + ".");
+            }
         }
+    }
+
+    private double getValue(TextView view) {
+        double num = 0;
+        try {
+            num = Double.parseDouble(view.getText().toString());
+        } catch (NumberFormatException e) {
+
+        }
+        return num;
+    }
+
+    @OnClick(R.id.percentage)
+    public void percentage() {
+        if (input1entered) {
+            input2.setText(getValue(input2) / 100 + "");
+            setAnswer();
+        } else
+            input3.setText(getValue(input3) / 100 + "");
     }
 
     @OnClick(R.id.plus)
@@ -129,6 +159,8 @@ public class MainActivity extends AppCompatActivity {
                         input2.setText("" + I);
                         setAnswer();
                         input1entered = true;
+                        sign1.setText(sign2.getText());
+                        sign2.setText("=");
                     } else {
                         if (input3.getText().toString().equals("0"))
                             input3.setText("" + I);
@@ -142,14 +174,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setAnswer() {
-        try {
-            number1 = Double.parseDouble(input1.getText().toString());
-            number2 = Double.parseDouble(input2.getText().toString());
-        } catch (NumberFormatException e) {
-            input3.setText("ERR");
-            return;
-        }
-        input3.setText(getAnswer() + "");
+        number1 = getValue(input1);
+        number2 = getValue(input2);
+        double ans = getAnswer();
+        if (ans == (int) ans)
+            input3.setText((int) ans + "");
+        else
+            input3.setText(ans + "");
     }
 
     private double getAnswer() {
