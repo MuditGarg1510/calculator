@@ -23,11 +23,7 @@
 
             <TextView
                 android:id="@+id/input1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:gravity="right"
-                android:textSize="60sp"
-                android:textColor="#000000"
+                style="@style/output"
                 android:layout_weight="1" />
 
             <View
@@ -45,15 +41,11 @@
 
             <TextView
                 android:id="@+id/sign1"
-                android:layout_width="@dimen/layoutWidthWeighted"
-                android:layout_height="match_parent"
                 style="@style/output"
                 android:layout_weight="1" />
 
             <TextView
                 android:id="@+id/input2"
-                android:layout_width="@dimen/layoutWidthWeighted"
-                android:layout_height="match_parent"
                 style="@style/output"
                 android:layout_weight="4" />
 
@@ -74,18 +66,13 @@
 
             <TextView
                 android:id="@+id/sign2"
-                android:layout_width="@dimen/layoutWidthWeighted"
-                android:layout_height="match_parent"
                 style="@style/output"
                 android:layout_weight="1" />
 
             <TextView
                 android:id="@+id/input3"
-                android:layout_width="@dimen/layoutWidthWeighted"
-                android:layout_height="match_parent"
                 android:layout_weight="4"
-                style="@style/output"
-                android:textSize="60sp" />
+                style="@style/output" />
 
             <View
                 style="@style/sideBar"/>
@@ -145,7 +132,7 @@
         <View style="@style/lineVertical" />
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="@dimen/layoutWidthWeighted"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical">
@@ -153,7 +140,7 @@
             <ImageView
                 android:id="@+id/backspace"
                 style="@style/normalButton"
-                android:layout_width="36dp"
+                android:layout_width="@dimen/imageWidth"
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:src="@mipmap/ic_backspace_black_24dp" />
 
@@ -241,7 +228,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/layoutWidthWeighted"
                 android:layout_weight="1"
-                android:gravity="center_horizontal|center_vertical"
                 app:srcCompat="@mipmap/ic_close_black_18dp" />
 
             <View style="@style/lineHorizontal" />

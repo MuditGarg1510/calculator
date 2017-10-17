@@ -3,6 +3,7 @@
     <dimen name="layoutWidthWeighted">0dp</dimen>
     <dimen name="lineWidth">1dp</dimen>
     <dimen name="buttonTextSize">30sp</dimen>
-    <dimen name="inputTextSize">60sp</dimen>
+    <dimen name="inputTextSize">40sp</dimen>
     <dimen name="sideBarWidth">10dp</dimen>
+    <dimen name="imageWidth">36dp</dimen>
 </resources>

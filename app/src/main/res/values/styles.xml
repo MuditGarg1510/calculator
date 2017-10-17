@@ -29,6 +29,8 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:gravity">right</item>
         <item name="android:textSize">@dimen/inputTextSize</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">@dimen/layoutWidthWeighted</item>
     </style>
     <style name="sideBar">
         <item name="android:layout_height">match_parent</item>
