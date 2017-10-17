@@ -15,82 +15,80 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="@dimen/layoutWidthWeighted"
             android:layout_weight="1">
 
             <View
-                android:layout_width="10dp"
-                android:layout_height="match_parent" />
+                style="@style/sideBar"/>
 
             <TextView
                 android:id="@+id/input1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:gravity="right"
+                android:textSize="60sp"
+                android:textColor="#000000"
                 android:layout_weight="1" />
 
             <View
-                android:layout_width="10dp"
-                android:layout_height="match_parent" />
+                style="@style/sideBar"/>
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="@dimen/layoutWidthWeighted"
             android:layout_weight="1">
 
             <View
-                android:layout_width="10dp"
-                android:layout_height="match_parent" />
+                style="@style/sideBar"/>
 
             <TextView
                 android:id="@+id/sign1"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/layoutWidthWeighted"
                 android:layout_height="match_parent"
+                style="@style/output"
                 android:layout_weight="1" />
 
             <TextView
                 android:id="@+id/input2"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/layoutWidthWeighted"
                 android:layout_height="match_parent"
+                style="@style/output"
                 android:layout_weight="4" />
 
             <View
-                android:layout_width="10dp"
-                android:layout_height="match_parent" />
+                style="@style/sideBar"/>
         </LinearLayout>
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="@dimen/lineWidth"
             android:id="@+id/second_entering"/>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="@dimen/layoutWidthWeighted"
             android:layout_weight="1">
 
             <View
-                android:layout_width="10dp"
-                android:layout_height="match_parent" />
+                style="@style/sideBar"/>
 
             <TextView
                 android:id="@+id/sign2"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/layoutWidthWeighted"
                 android:layout_height="match_parent"
+                style="@style/output"
                 android:layout_weight="1" />
 
             <TextView
                 android:id="@+id/input3"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/layoutWidthWeighted"
                 android:layout_height="match_parent"
                 android:layout_weight="4"
-                android:gravity="right"
-                android:text="0"
-                android:textColor="#000000"
+                style="@style/output"
                 android:textSize="60sp" />
 
             <View
-                android:layout_width="10dp"
-                android:layout_height="match_parent" />
+                style="@style/sideBar"/>
         </LinearLayout>
 
     </LinearLayout>
@@ -99,12 +97,12 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/layoutWidthWeighted"
         android:layout_weight="3"
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="@dimen/layoutWidthWeighted"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical">
@@ -113,7 +111,7 @@
                 android:id="@+id/AC"
                 style="@style/normalButton"
                 android:text="AC"
-                android:textColor="#ff8c00" />
+                android:textColor="@color/orange" />
 
             <View style="@style/lineHorizontal" />
 
@@ -198,12 +196,8 @@
 
             <TextView
                 android:id="@+id/divide"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="/"
-                android:textSize="30sp" />
+                style="@style/normalButton"
+                android:text="/" />
 
             <View style="@style/lineHorizontal" />
 
@@ -237,7 +231,7 @@
         <View style="@style/lineVertical" />
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="@dimen/layoutWidthWeighted"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical">
@@ -245,7 +239,7 @@
             <ImageView
                 android:id="@+id/multiply"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="@dimen/layoutWidthWeighted"
                 android:layout_weight="1"
                 android:gravity="center_horizontal|center_vertical"
                 app:srcCompat="@mipmap/ic_close_black_18dp" />
@@ -266,21 +260,21 @@
 
             <View style="@style/lineHorizontal" />
 
-            <view
+            <View
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#FF8c00" />
+                android:layout_height="@dimen/lineWidth"
+                android:background="@color/orange" />
 
             <TextView
                 android:id="@+id/equal"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="@dimen/layoutWidthWeighted"
                 android:layout_weight="2"
-                android:background="#FF8c00"
+                android:background="@color/orange"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="="
-                android:textColor="#ffffff"
-                android:textSize="30sp" />
+                android:textColor="@color/white"
+                android:textSize="@dimen/buttonTextSize" />
         </LinearLayout>
 
     </LinearLayout>

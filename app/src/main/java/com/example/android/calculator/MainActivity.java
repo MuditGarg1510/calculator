@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         input1.setText("");
         input2.setText("");
         input3.setText("");
+        input1entered = false;
+        isOperationEntered = false;
     }
 
     @OnClick(R.id.backspace)
@@ -68,21 +70,29 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.plus)
     public void plus() {
         operation = '+';
+        sign2.setText("+");
+        isOperationEntered = true;
     }
 
     @OnClick(R.id.minus)
     public void minus() {
         operation = '-';
+        sign2.setText("-");
+        isOperationEntered = true;
     }
 
     @OnClick(R.id.multiply)
     public void multiply() {
         operation = '*';
+        sign2.setText("*");
+        isOperationEntered = true;
     }
 
     @OnClick(R.id.divide)
     public void divide() {
         operation = '/';
+        sign2.setText("/");
+        isOperationEntered = true;
     }
 
     @OnClick(R.id.equal)
@@ -111,11 +121,20 @@ public class MainActivity extends AppCompatActivity {
             number[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (!input1entered)
-                        input3.setText(input3.getText().toString() + I);
-                    else {
+                    if (input1entered) {
                         input2.setText(input2.getText().toString() + I);
                         setAnswer();
+                    } else if (isOperationEntered) {
+                        input1.setText(input3.getText().toString());
+                        input2.setText("" + I);
+                        setAnswer();
+                        input1entered = true;
+                    } else {
+                        if (input3.getText().toString().equals("0"))
+                            input3.setText("" + I);
+                        else
+                            input3.setText(input3.getText().toString() + I);
+
                     }
                 }
             });
