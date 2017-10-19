@@ -3,6 +3,8 @@ package com.example.android.calculator;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 import butterknife.BindView;
@@ -14,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     double number2;
     boolean input1entered = false;
     char operation;
+    @BindView(R.id.second_entering)
+    View view;
     @BindView(R.id.input3)
     TextView input3;
     @BindView(R.id.input2)
@@ -36,13 +40,16 @@ public class MainActivity extends AppCompatActivity {
         isOperationEntered = false;
         sign2.setText("");
         sign1.setText("");
+        view.setBackgroundColor(getResources().getColor(R.color.white));
     }
 
     @OnClick(R.id.backspace)
     public void backspace() {
         if (input1entered) {
-            if (input2.getText().toString().length() == 1)
+            if (input2.getText().toString().length() == 1) {
                 input2.setText("");
+                input1entered = false;
+            }
             else if (input2.getText().toString().length() > 1)
                 input2.setText(input2.getText().toString().substring(0, input2.getText().toString().length() - 1));
         } else if (isOperationEntered) {
@@ -62,8 +69,7 @@ public class MainActivity extends AppCompatActivity {
             if (input2.getText().toString().length() == 0)
                 input2.setText("0.");
             else {
-                double num = getValue(input2);
-                if (num == (int) num)
+                if (input2.getText().toString().indexOf('.') == -1)
                     input2.setText(input2.getText() + ".");
             }
             setAnswer();
@@ -71,8 +77,7 @@ public class MainActivity extends AppCompatActivity {
             if (input3.getText().toString().length() == 0)
                 input3.setText("0.");
             else {
-                double num = getValue(input3);
-                if (num == (int) num)
+                if (input3.getText().toString().indexOf('.') == -1)
                     input3.setText(input3.getText() + ".");
             }
         }
@@ -134,6 +139,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         number[0] = (TextView) findViewById(R.id.number0);
@@ -181,6 +188,7 @@ public class MainActivity extends AppCompatActivity {
             input3.setText((int) ans + "");
         else
             input3.setText(ans + "");
+        view.setBackgroundColor(getResources().getColor(R.color.lineColor));
     }
 
     private double getAnswer() {
