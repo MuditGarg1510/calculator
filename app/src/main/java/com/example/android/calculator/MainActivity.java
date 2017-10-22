@@ -125,8 +125,12 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.divide)
     public void divide() {
-        operation = '/';
-        sign2.setText("/");
+        setOperation('/');
+    }
+
+    public void setOperation(char op) {
+        operation = op;
+        sign2.setText("" + op);
         isOperationEntered = true;
     }
 
